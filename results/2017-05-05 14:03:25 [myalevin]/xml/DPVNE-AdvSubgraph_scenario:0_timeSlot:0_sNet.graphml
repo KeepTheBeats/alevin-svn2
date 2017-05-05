@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<key id="d0" for="node" attr.name="mapping" attr.type="string"/>
+<key id="d1" for="edge" attr.name="mapping" attr.type="string"/>
+<key id="d2" for="node" attr.name="name" attr.type="string"/>
+<key id="d3" for="edge" attr.name="name" attr.type="string"/>
+<key id="d4" for="node" attr.name="CpuResource" attr.type="string"/>
+<key id="d5" for="edge" attr.name="BandwidthResource" attr.type="string"/>
+<graph id="G" edgedefault="directed">
+<node id="n1128">
+  <data key="d4">classname:CpuResource_cycles:100.0_occupiedCycles:20.0</data>
+  <data key="d0">[layer:1_name:1134_id:1146]</data>
+  <data key="d2">1128</data>
+</node>
+<node id="n1130">
+  <data key="d4">classname:CpuResource_cycles:100.0_occupiedCycles:30.0</data>
+  <data key="d0">[layer:1_name:1136_id:1147]</data>
+  <data key="d2">1130</data>
+</node>
+<edge id="n1132" source="n1128" target="n1130">
+  <data key="d5">classname:BandwidthResource_bandwidth:100.0_occupiedBandwidth:10.0</data>
+  <data key="d1">[layer:1_name:1138_id:1148]</data>
+  <data key="d3">1132</data>
+</edge>
+</graph>
+</graphml>
