@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<key id="d0" for="node" attr.name="mapping" attr.type="string"/>
+<key id="d1" for="edge" attr.name="mapping" attr.type="string"/>
+<key id="d2" for="node" attr.name="name" attr.type="string"/>
+<key id="d3" for="edge" attr.name="name" attr.type="string"/>
+<key id="d4" for="node" attr.name="IdResource" attr.type="string"/>
+<key id="d5" for="node" attr.name="CpuResource" attr.type="string"/>
+<key id="d6" for="edge" attr.name="BandwidthResource" attr.type="string"/>
+<graph id="G" edgedefault="directed">
+<node id="n1128">
+  <data key="d4">classname:IdResource_id:1128</data>
+  <data key="d5">classname:CpuResource_cycles:100.0_occupiedCycles:50.0</data>
+  <data key="d0">[layer:1_name:1149_id:1180]</data>
+  <data key="d2">1128</data>
+</node>
+<node id="n1131">
+  <data key="d4">classname:IdResource_id:1131</data>
+  <data key="d5">classname:CpuResource_cycles:100.0_occupiedCycles:100.0</data>
+  <data key="d0">[layer:1_name:1152_id:1181]</data>
+  <data key="d2">1131</data>
+</node>
+<node id="n1134">
+  <data key="d4">classname:IdResource_id:1134</data>
+  <data key="d5">classname:CpuResource_cycles:100.0_occupiedCycles:35.0</data>
+  <data key="d0">[layer:1_name:1155_id:1182]</data>
+  <data key="d2">1134</data>
+</node>
+<node id="n1137">
+  <data key="d4">classname:IdResource_id:1137</data>
+  <data key="d0">[]</data>
+  <data key="d2">1137</data>
+</node>
+<edge id="n1139" source="n1128" target="n1131">
+  <data key="d6">classname:BandwidthResource_bandwidth:50.0_occupiedBandwidth:25.0</data>
+  <data key="d1">[layer:1_name:1158_id:1183]</data>
+  <data key="d3">1139</data>
+</edge>
+<edge id="n1141" source="n1134" target="n1128">
+  <data key="d6">classname:BandwidthResource_bandwidth:50.0_occupiedBandwidth:0.0</data>
+  <data key="d1">[]</data>
+  <data key="d3">1141</data>
+</edge>
+<edge id="n1143" source="n1131" target="n1134">
+  <data key="d6">classname:BandwidthResource_bandwidth:70.0_occupiedBandwidth:55.0</data>
+  <data key="d1">[layer:1_name:1158_id:1183, layer:1_name:1160_id:1184]</data>
+  <data key="d3">1143</data>
+</edge>
+<edge id="n1145" source="n1128" target="n1137">
+  <data key="d6">classname:BandwidthResource_bandwidth:40.0_occupiedBandwidth:0.0</data>
+  <data key="d1">[]</data>
+  <data key="d3">1145</data>
+</edge>
+<edge id="n1147" source="n1137" target="n1134">
+  <data key="d6">classname:BandwidthResource_bandwidth:70.0_occupiedBandwidth:0.0</data>
+  <data key="d1">[]</data>
+  <data key="d3">1147</data>
+</edge>
+</graph>
+</graphml>

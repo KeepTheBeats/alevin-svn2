@@ -1,0 +1,74 @@
+=== FUNDING ===
+
+This work has been funded by the European FP7 Network of Excellence
+"Euro-NF" through the Speciï¬�c Joint Developments and Experiments Project
+"Virtual Network Resource Embedding Algorithms" (VNREAL).
+
+  * http://www.euronf.org
+  * http://cordis.europa.eu/fp7
+  
+=== AUTHORS ===
+
+  * Andreas Fischer <andreas.fischer@uni-passau.de>
+
+Chair of Computer Networks and Computer Communications
+University of Passau
+Innstraße 43, 94032 Passau, Germany
+
+  * Michael Till Beck <michael.beck@ifi.lmu.de>
+
+Mobile and Distributed Systems Group
+Institute for Computer Science
+Ludwig Maximilian University of Munich
+  
+  * Michael Duelli <duelli@informatik.uni-wuerzburg.de>
+  * Daniel Schlosser <schlosser@informatik.uni-wuerzburg.de>
+  * Vlad Singeorzan <vlad.singeorzan@informatik.uni-wuerzburg.de>
+
+Chair of Communication Networks (Informatik III)
+University of Wuerzburg, Institute of Computer Science
+Am Hubland, 97074 Wuerzburg, Germany
+
+  * Juan Felipe Botero <jfbotero@entel.upc.edu>
+  * Xavier Hesselbach-Serra <xavier.hesselbach@entel.upc.edu>
+  * Lisset Diaz Cervantes <lisset.diaz@entel.upc.edu>
+
+Dept. Enginyeria TelemÃ tica
+Universitat PolitÃ¨cnica de Catalunya
+C/Jordi Girona, 1 i 3
+MÃ²dul C3 - Campus Nord
+08034 Barcelona, Spain 
+ 
+
+
+ 
+ MuLaViTo:
+ 
+ === FUNDING ===
+
+This work has been funded by the Federal Ministry of Education and Research
+of the Federal Republic of Germany (BMBF Förderkennzeichen 01BP0775). It is
+part of the EUREKA project "100 Gbit/s Carrier-Grade Ethernet Transport
+Technologies (CELTIC CP4-001)". The authors alone are responsible for this work.
+
+  * http://www.bmbf.de/
+  * http://www.celtic-initiative.org/projects/100GET/
+  * http://www3.informatik.uni-wuerzburg.de/research/projects/100GET-E3-R3G/
+  
+=== AUTHORS ===
+  
+Contributors
+  * Michael Duelli <duelli@informatik.uni-wuerzburg.de>
+  * Julian Ott <julian.ott@informatik.uni-wuerzburg.de>
+
+Add-ons by
+  * Xiaohua Qin <qin@informatik.uni-wuerzburg.de>
+    * k-shortest path: Yen
+  * Thilo Müller <thilo.mueller@informatik.uni-wuerzburg.de>
+    * Disjoint shortest path: Suurballe-Tarjan
+    * k-shortest path: Eppstein, Yen
+
+Chair of Communication Networks (Informatik III)
+University of Wuerzburg, Institute of Computer Science
+Am Hubland, 97074 Wuerzburg, Germany
+

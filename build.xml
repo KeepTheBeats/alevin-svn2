@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+/* ***** BEGIN LICENSE BLOCK *****
+ * Copyright (C) 2010-2011, The VNREAL Project Team.
+ * 
+ * This work has been funded by the European FP7
+ * Network of Excellence "Euro-NF" (grant agreement no. 216366)
+ * through the Specific Joint Developments and Experiments Project
+ * "Virtual Network Resource Embedding Algorithms" (VNREAL). 
+ *
+ * The VNREAL Project Team consists of members from:
+ * - University of Wuerzburg, Germany
+ * - Universitat Politecnica de Catalunya, Spain
+ * - University of Passau, Germany
+ * See the file AUTHORS for details and contact information.
+ * 
+ * This file is part of ALEVIN (ALgorithms for Embedding VIrtual Networks).
+ *
+ * ALEVIN is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License Version 3 or later
+ * (the "GPL"), or the GNU Lesser General Public License Version 3 or later
+ * (the "LGPL") as published by the Free Software Foundation.
+ *
+ * ALEVIN is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * or the GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License and
+ * GNU Lesser General Public License along with ALEVIN; see the file
+ * COPYING. If not, see <http://www.gnu.org/licenses/>.
+ *
+ * ***** END LICENSE BLOCK ***** */
+ 
+@author Michael Duelli
+@since 2011-05-27
+-->
+<project default="init" name="Create JAR for ALEVIN">
+	<description>Build the ALEVIN JAR and download all dependencies.</description>
+
+	<target name="download_check">
+		<!--<available file="${basedir}/lib/junit-4.10.jar"  property="junit.existing" />-->
+		<available file="${basedir}/lib/junit-4.11.jar"  property="junit.existing" />
+		<available file="${basedir}/lib/jsc.jar"  property="jsc.existing" />
+	</target>
+
+	<target name="download_junit" unless="junit.existing">
+	                <!--<get src="http://cloud.github.com/downloads/KentBeck/junit/junit-4.10.jar" dest="${basedir}/lib/junit-4.10.jar" />-->
+	                <get src="http://search.maven.org/remotecontent?filepath=junit/junit/4.11/junit-4.11.jar" dest="${basedir}/lib/junit-4.11.jar" />
+	</target>
+
+	<target name="download_jsc" unless="jsc.existing">
+	                <get src="http://www.jsc.nildram.co.uk/downloads/jsc.jar" dest="${basedir}/lib/jsc.jar" />
+	</target>
+
+
+
+	<target name="compile" depends="download_check,download_junit,download_jsc">
+		<mkdir dir="${basedir}/bin" />
+		<javac srcdir="${basedir}/src" destdir="${basedir}/bin" encoding="UTF-8" debug="on" includeantruntime="false" target="1.7">
+			<include name="**/*.java" />
+			<!--<exclude name="vnreal/algorithms/utils/LpSolver.java" /> -->
+			<!--<exclude name="tests/**" /> -->
+			<classpath>
+				<pathelement path="${basedir}/lib/JUNG2.jar" />
+				<pathelement path="${basedir}/lib/junit-4.11.jar" />
+				<pathelement path="${basedir}/lib/glpk-java.jar" />
+				<pathelement path="${basedir}/lib/commons-cli.jar" />
+				<pathelement path="${basedir}/lib/batik.jar" />
+				<pathelement path="${basedir}/lib/jsc.jar" />
+				<pathelement path="${basedir}/lib/stax-utils.jar" />
+			</classpath>
+		</javac>
+		<copy todir="${basedir}/bin" failonerror="false">
+			<fileset dir="${basedir}/src" excludes="**/*.java,tests/**" />
+		</copy>
+	</target>
+
+	<target name="init" depends="compile">
+		<jar destfile="${basedir}/ALEVIN.jar" filesetmanifest="mergewithoutmain" update="true">
+			<manifest>
+				<attribute name="Main-Class" value="vnreal.Main" />
+				<attribute name="Class-Path" value=". lib/JUNG2.jar lib/junit-4.11.jar lib/glpk-java.jar lib/batik.jar lib/jsc.jar lib/stax-utils.jar" />
+			</manifest>
+			<fileset dir="${basedir}/bin" />
+			<filelist id="docfiles" dir="${basedir}" files="AUTHORS,CHANGELOG,COPYING,README" />
+		</jar>
+		<zip destfile="${basedir}/ALEVIN-src.zip" update="true">
+			<zipfileset dir="${basedir}/src" prefix="src/" />
+			<filelist id="docfiles" dir="${basedir}" files="AUTHORS,build.xml,CHANGELOG,COPYING,README" />
+		</zip>
+	</target>
+</project>

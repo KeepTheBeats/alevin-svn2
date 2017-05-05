@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Experiment
+        xmlns="http://alevin.sf.net"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://alevin.sf.net Experiment.xsd">
+
+	<Generators>
+		<RNG>
+			<Seed>1</Seed>
+			<Seed>2</Seed>
+			<Seed>3</Seed>
+			<Seed>4</Seed>
+			<Seed>5</Seed>
+		</RNG>
+		<GeneratorElement name="WaxmanSubstrateElement">
+			<Parameter name="alpha" value="0.5" />
+			<Parameter name="beta" value="0.2" />
+			<Parameter name="nodes" value="50" />
+			<Parameter name="bidirectional" value="true" />
+		</GeneratorElement>
+		<GeneratorElement name="CPUResourceElement">
+			<Parameter name="min" value="1" />
+			<Parameter name="max" value="100" />
+		</GeneratorElement>
+		<GeneratorElement name="BWResourceElement">
+			<Parameter name="min" value="1" />
+			<Parameter name="max" value="100" />
+		</GeneratorElement>
+		<GeneratorElement name="WaxmanVirtualElement">
+			<Parameter name="num" value="5" />
+			<Parameter name="num" value="6" />
+			<Parameter name="num" value="7" />
+			<Parameter name="num" value="8" />
+			<Parameter name="num" value="9" />
+			<Parameter name="num" value="10" />
+			<Parameter name="alpha" value="0.5" />
+			<Parameter name="beta" value="0.2" />
+			<Parameter name="nodes" value="10" />
+			<Parameter name="bidirectional" value="true" />
+		</GeneratorElement>
+		<GeneratorElement name="CPUDemandElement">
+			<Parameter name="min" value="1" />
+			<Parameter name="max" value="10" />
+		</GeneratorElement>
+		<GeneratorElement name="BWDemandElement">
+			<Parameter name="min" value="1" />
+			<Parameter name="max" value="10" />
+		</GeneratorElement>
+	</Generators>
+	<!--<GlobalConstraints>
+		<Constraint name="CoHosting" value="True" />
+		<Constraint name="PathSplitting" value="False" />
+		<Constraint name="TimeLimited" value="False" />
+	</GlobalConstraints>-->
+	<Algorithm name="SubgraphIsomorphismStackAlgorithm">
+		<Parameter name="Advanced" value="True" />
+	</Algorithm>
+	<Evaluation>
+		<Metric name="AcceptedVnrRatio" />
+		<Metric name="RevenueCost" />
+		<Metric name="Runtime" />
+	</Evaluation>
+	<Exporters resultsDir="results">
+		<!--	<Exporter name="Standard" />
+		<Exporter name="DOTTopologies">
+		</Exporter> -->
+		<Exporter name="TestRunExporter" >
+			<Parameter name="ExportNetworks" value="False" />
+		</Exporter>
+	</Exporters>
+</Experiment>

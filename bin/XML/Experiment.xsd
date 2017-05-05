@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://alevin.sf.net"
+           targetNamespace="http://alevin.sf.net"
+           elementFormDefault="qualified">
+
+<xs:element name="Experiment">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name="Generators">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RNG" type="RNGType" />
+						<xs:element name="GeneratorElement" type="GeneratorElementType" maxOccurs="unbounded" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Algorithm" type="AlgorithmType" maxOccurs="unbounded" />
+			<xs:element name="Evaluation">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Metric" type="MetricType" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Exporters">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Exporter" type="ExporterType" maxOccurs="unbounded" />
+					</xs:sequence>
+					<xs:attribute name="resultsDir" type="xs:string" />
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+	<xs:complexType name="RNGType">
+		<xs:choice>
+			<xs:sequence>
+				<xs:element name="Seed" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
+			</xs:sequence>
+			<xs:element name="RandomSeeds" type="xs:string" />
+			<xs:element name="OrderedSeeds" type="xs:string" />
+		</xs:choice>
+	</xs:complexType>
+
+	<xs:complexType name="GeneratorElementType">
+		<xs:sequence>
+			<xs:element name="Parameter" type="ParamType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required" />
+		<xs:attribute name="count" type="xs:integer" />
+	</xs:complexType>
+
+	<xs:complexType name="AlgorithmType">
+		<xs:sequence>
+			<xs:element name="Parameter" type="ParamType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required" />
+	</xs:complexType>
+
+	<xs:complexType name="MetricType">
+		<xs:attribute name="name" type="xs:string" use="required" />
+	</xs:complexType>
+
+	<xs:complexType name="ParamType">
+		<xs:attribute name="name" type="xs:string" use="required" />
+		<xs:attribute name="value" type="xs:string" use="required" />
+	</xs:complexType>
+
+	<xs:complexType name="ExporterType">
+		<xs:sequence>
+			<xs:element name="Parameter" type="ParamType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required" />
+	</xs:complexType>
+
+</xs:schema>
