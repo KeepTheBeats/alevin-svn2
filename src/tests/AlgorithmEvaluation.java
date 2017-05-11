@@ -136,7 +136,8 @@ public final class AlgorithmEvaluation {
 		LinkedList<Request> activeRequests = new LinkedList<Request>();
 		HashMap<AbstractScenarioTest, CSVPrintWriterDataReceiver> resultwriters = new HashMap<AbstractScenarioTest, CSVPrintWriterDataReceiver>();
 		
-		String fullname = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()) + " " + name;
+//		String fullname = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()) + " " + name;
+		String fullname = name;
 		File dir = new File(Consts.RESULTS_DIR, fullname);
 		if (dir.exists())
 			throw new AssertionError("directory exists: " + dir.getName());
@@ -291,7 +292,8 @@ public final class AlgorithmEvaluation {
 									System.out.println("[" + name + " " + dateFormat.format(new Date()) + ", " + pos + "/" + total + "] " + exportfilename);
 									
 									//import a .xml topo
-									NetworkStack stack1 = XMLImporter.importScenario("/home/ubuntu/mine/topo/2.xml").getNetworkStack();
+									NetworkStack stack1 = XMLImporter.importScenario("/home/ubuntu/mine/DPVNE_alevin_experi/data/import"+name+".xml").getNetworkStack();
+//									NetworkStack stack1 = XMLImporter.importScenario("/home/ubuntu/mine/topo/import50.xml").getNetworkStack();
 									SubstrateNetwork sNet1 = stack1.getSubstrate();
 									LinkedList<VirtualNetwork> vNets1 = (LinkedList<VirtualNetwork>) stack1.getVirtuals();
 									//import end
@@ -376,14 +378,14 @@ public final class AlgorithmEvaluation {
 									} else {
 										request.mappingResult = stack;
 
-										if (export) {
-											int VNetPos = 0;
-											for (Network<?,?,?> v : request.mappingResult.getVirtuals()) {
-												GraphMLExporter.export(xmldir.getAbsolutePath() + File.separator + exportfilename + "_vNet" + VNetPos + ".graphml", v);
-												VNetPos++;
-											}
-											GraphMLExporter.export(xmldir.getAbsolutePath() + File.separator + exportfilename + "_sNet.graphml", request.mappingResult.getSubstrate());
-										}
+//										if (export) {
+//											int VNetPos = 0;
+//											for (Network<?,?,?> v : request.mappingResult.getVirtuals()) {
+//												GraphMLExporter.export(xmldir.getAbsolutePath() + File.separator + exportfilename + "_vNet" + VNetPos + ".graphml", v);
+//												VNetPos++;
+//											}
+//											GraphMLExporter.export(xmldir.getAbsolutePath() + File.separator + exportfilename + "_sNet.graphml", request.mappingResult.getSubstrate());
+//										}
 
 										for (EvaluationMetric<NetworkStack> m : algorithm.getMetrics(elapsedTimeMS)) {
 											System.out.println("    " + m.getClass().getSimpleName() + ": " + m.calculate(stack));

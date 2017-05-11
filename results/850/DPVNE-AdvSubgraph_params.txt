@@ -1,0 +1,23 @@
+numScenarios: 1
+maxRuntimeInSeconds: -1
+
+
+distributionParameter:null
+
+sNetParams.edgesToAttach = 2
+sNetParams.numTimeStepsArray = [100]
+
+
+vNetParams.edgesToAttach = 2
+vNetParams.numTimeStepsArray = [10]
+
+
+numVNetsArray: [5]
+
+algoParam.omega:10.0
+algoParam.delegationNodesLevel:0
+algoParam.fullKnowledgeNodesLevel:0
+algoParam.partitions:2
+algoParam.minPartitionSize:5
+algoParam.maxLevel:-1
+

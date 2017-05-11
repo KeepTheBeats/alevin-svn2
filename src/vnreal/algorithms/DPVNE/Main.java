@@ -144,7 +144,7 @@ public class Main {
 //		final DistributionParameter distributionParameter = new DistributionParameter(5, 1d/100d, 1d/10d);
 		final DistributionParameter distributionParameter = null;
 		
-		final boolean export = true;
+		final boolean export = false;
 		
 		
 		AlgorithmEvaluation eval = new AlgorithmEvaluation(sNetGenerator, vNetGenerator, generateDuplicateEdges);
@@ -152,15 +152,19 @@ public class Main {
 		
 		
 		// ################## run ##################
-		try {
-			eval.executeTests(PROJECT_NAME, export, numScenarios, maxRuntimeInSeconds,
-					distributionParameter,
-					sNetGeneratorParams, sNetConstraintsGenerator,
-					vNetGeneratorParams, numVNetsArray, vNetConstraintsGenerator,
-					algorithms);
-
-		} catch(Throwable e) {
-			throw(e);
+		int namenum = 50;
+		while(namenum<2501){
+			try {
+				eval.executeTests(String.valueOf(namenum), export, numScenarios, maxRuntimeInSeconds,
+						distributionParameter,
+						sNetGeneratorParams, sNetConstraintsGenerator,
+						vNetGeneratorParams, numVNetsArray, vNetConstraintsGenerator,
+						algorithms);
+	
+			} catch(Throwable e) {
+				throw(e);
+			}
+			namenum=namenum+50;
 		}
 		
 		/*Scenario scenario = GUI.getInstance().getScenario();
