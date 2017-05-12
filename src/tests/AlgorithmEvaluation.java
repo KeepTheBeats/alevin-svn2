@@ -292,7 +292,7 @@ public final class AlgorithmEvaluation {
 									System.out.println("[" + name + " " + dateFormat.format(new Date()) + ", " + pos + "/" + total + "] " + exportfilename);
 									
 									//import a .xml topo
-									NetworkStack stack1 = XMLImporter.importScenario("/home/ubuntu/mine/DPVNE_alevin_experi/data/nrxml/import"+name+".xml").getNetworkStack();
+									NetworkStack stack1 = XMLImporter.importScenario("/home/ubuntu/mine/DPVNE_alevin_experi/data/psxml/import"+name+".xml").getNetworkStack();
 //									NetworkStack stack1 = XMLImporter.importScenario("/home/ubuntu/mine/topo/import50.xml").getNetworkStack();
 									NetworkStack stack2 = XMLImporter.importScenario("/home/ubuntu/mine/topo/Sc_0_sp_0_VN_5_vp_0_AT_0_AP_0.xml").getNetworkStack();
 									SubstrateNetwork sNet1 = stack1.getSubstrate();
