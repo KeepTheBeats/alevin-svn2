@@ -152,8 +152,8 @@ public class Main {
 		
 		
 		// ################## run ##################
-		int namenum = 50;
-		while(namenum<2501){
+		int namenum = 10;
+		while(namenum<201){
 			try {
 				eval.executeTests(String.valueOf(namenum), export, numScenarios, maxRuntimeInSeconds,
 						distributionParameter,
@@ -164,7 +164,7 @@ public class Main {
 			} catch(Throwable e) {
 				throw(e);
 			}
-			namenum=namenum+50;
+			namenum=namenum+10;
 		}
 		
 		/*Scenario scenario = GUI.getInstance().getScenario();

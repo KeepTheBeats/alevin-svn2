@@ -292,10 +292,13 @@ public final class AlgorithmEvaluation {
 									System.out.println("[" + name + " " + dateFormat.format(new Date()) + ", " + pos + "/" + total + "] " + exportfilename);
 									
 									//import a .xml topo
-									NetworkStack stack1 = XMLImporter.importScenario("/home/ubuntu/mine/DPVNE_alevin_experi/data/import"+name+".xml").getNetworkStack();
+									NetworkStack stack1 = XMLImporter.importScenario("/home/ubuntu/mine/DPVNE_alevin_experi/data/nrxml/import"+name+".xml").getNetworkStack();
 //									NetworkStack stack1 = XMLImporter.importScenario("/home/ubuntu/mine/topo/import50.xml").getNetworkStack();
+									NetworkStack stack2 = XMLImporter.importScenario("/home/ubuntu/mine/topo/Sc_0_sp_0_VN_5_vp_0_AT_0_AP_0.xml").getNetworkStack();
 									SubstrateNetwork sNet1 = stack1.getSubstrate();
+									SubstrateNetwork sNet2 = stack2.getSubstrate();
 									LinkedList<VirtualNetwork> vNets1 = (LinkedList<VirtualNetwork>) stack1.getVirtuals();
+									LinkedList<VirtualNetwork> vNets2 = (LinkedList<VirtualNetwork>) stack2.getVirtuals();
 									//import end
 									
 									long startTime = System.currentTimeMillis();
