@@ -6,3 +6,4 @@
 4. 我通过调用XMLImporter.importScenario("xxx.xml")从描述scenario的xml文件中得到一个scenario对象，再通过scenario对象（类）的getNetworkStack()方法从scenario中得到一个NetworkStack对象，再通过NetworkStack对象（类）的getSubstrate方法获得一个SubstrageNetwork对象（底层网络），通过NetworkStack对象（类）的getVirtuals方法获得一个List<VirtualNetwork>对象，并转换为LinkedList<VirtualNetwork>对象。
 5. 在AlgorithmEvaluation类的executeTests方法中，调用algorithm.map()方法时，把从xml中获取到的SubstrageNetwork对象和LinkedList<VirtualNetwork>对象做为algorithm.map()的参数。
 6. 这样就用DPVNE算法对该xml文件中的情景进行了计算。
+7. [用alevin对DPVNE算法进行实验时的数据和用到的各种程序。](https://github.com/KeepTheBeats/DPVNE_alevin_experi)
